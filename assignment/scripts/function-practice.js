@@ -15,21 +15,24 @@ console.log('Test - should say "Hello World!"', hello());
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 function helloName( name ) {
-  return;
+  return `Hello ${name}`;
 }
 // Remember to call the function to test
-
+let myName = 'James';
+console.log('2 -', helloName(myName) + '!');
 
 // 3. Function to add two numbers together & return the result
-function addNumbers( firstNumber ) {
-  // return firstNumber + secondNumber;
+function addNumbers( firstNumber, secondNumber ) {
+  return firstNumber + secondNumber;
 }
 
+console.log(`3 - sum: ${addNumbers(2, 8)}`);
 
 // 4. Function to multiply three numbers & return the result
-function multiplyThree( ){
-
+function multiplyThree( num1, num2, num3){
+  return num1 * num2 * num3;
 }
+console.log(` 3 - product: ${multiplyThree(3, 5, 2)}`)
 
 
 // 5. Function that will return true if a number is positive, 
@@ -66,7 +69,8 @@ function find( value, array ){
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  
+  
 }
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
