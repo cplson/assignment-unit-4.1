@@ -38,15 +38,12 @@ console.log(` 3 - product: ${multiplyThree(3, 5, 2)}`)
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
 function isPositive( number ) {
-  if ( number >= 0 ){
+  if ( number > 0 ){
     return true;
   }else{
     return false;
   }
 }console.log(`5 - Tests:`);
-console.log(`result of 5: ${isPositive(5)}`);
-console.log(`result of 0: ${isPositive(0)}`);
-console.log(`result of -20: ${isPositive(-20)}`);
 // Call the function to test each outcome (true & false) 
 // Write a separate console.log statement for each outcome
 console.log( 'isPositive - should say true', isPositive(3) );
