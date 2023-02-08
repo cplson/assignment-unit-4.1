@@ -72,8 +72,19 @@ console.log(`Result of populated array: ${getLast(myArray)}`);
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find( value, array ){
-  
+  for(v of array){
+    if(v === value){
+      return true;
+    }
+  }
+  return false;
 }
+console.log(`7 - Tests`);
+console.log(`Result of 1: ${find(1, myArray)}`);
+console.log(`Result of 2: ${find(2, myArray)}`);
+console.log(`Result of 1: ${find(4, myArray)}`);
+console.log(`Result of 1: ${find(13, myArray)}`);
+
 
 // ----------------------
 // Stretch Goals
