@@ -111,9 +111,75 @@ console.log(`Expected output is 20: ${sumAll(myArray)}`);
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
+myArray.push(-10);
+myArray.push(9);
+myArray.unshift(-1);
+myArray.push(0);
+console.log('10- original array:', myArray);
+console.log(`The new array with only positive numbers: ${filterPositive(myArray)}`);
+function filterPositive(arr){
+let newArray = [];
+for(value of arr){
+  if(value > 0){
+    newArray.push(value);
+  }
+}
+return newArray;
+}
 
 
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
+
+// Given an array of strings complete the function landPerimeter 
+// by calculating the total perimeter of all the islands. 
+// Each piece of land will be marked with 'X' while the water fields 
+// are represented as 'O'. Consider each tile being a perfect 1 x 1 piece of land.
+
+let graph1 = [
+ 'XOOXO',
+ 'XOOXO',
+ 'OOOXO',
+ 'XXOXO',
+ 'OXOOO'
+]
+
+let graph2 = [
+'XOOO',
+'XOXO',
+'XOXO',
+'OOXX',
+'OOOO'
+]
+
+function landPerimeter(array){
+  perimeter = 0;
+  for(let x = 0; x < array.length; x++){
+    for(let y = 0; y < array[x].length; y++){
+      if(array[x][y] === 'X'){
+        perimeter += 4;
+        //Checks for adjacent land values
+        if(x-1 >= 0 && array[x-1][y] === 'X'){          
+            perimeter--;      
+        }
+        if(x+1 < array.length && array[x+1][y] === 'X'){
+          perimeter--;
+        }
+        if(y-1 >= 0 && array[x][y-1] === 'X'){
+          perimeter--;
+        }
+        if(y+1 < array[x].length && array[x][y+1] === 'X'){
+          perimeter--;
+        }
+
+      }
+    }
+  }
+  return perimeter;
+}
+
+console.log('11 - Tests:');
+console.log(`The expected output is 24: ${landPerimeter(graph1)}`);
+console.log(`The expected output is 18: ${landPerimeter(graph2)}`);
